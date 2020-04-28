@@ -4,7 +4,7 @@ let table = document.getElementsByClassName("table")[0];
 function prices(data){
 	for(let p in data){
 		p = data[p].quick_status;
-		priceDiff.push([p.productId,(p.sellPrice*0.99)/(p.buyPrice*1.01),p.buyPrice-p.sellPrice,p.buyMovingWeek]);
+		priceDiff.push([p.productId,(p.sellPrice*0.99)/(p.buyPrice*1.01),p.buyPrice*0.99-p.sellPrice*1.01,p.buyMovingWeek]);
 	}
 	drawRows(priceDiff,1,true);
 }
