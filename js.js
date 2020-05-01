@@ -4,7 +4,7 @@ let table = document.getElementsByClassName("table")[0];
 function prices(data){
 	for(let p in data){
 		p = data[p].quick_status;
-		priceDiff.push([p.productId,(p.sellPrice*1.01)/(p.buyPrice*0.99),p.buyPrice*0.99-p.sellPrice*1.01,p.buyMovingWeek]);
+		priceDiff.push([p.productId,1-(p.sellPrice*1.01)/(p.buyPrice*0.99),p.buyPrice*0.99-p.sellPrice*1.01,p.buyMovingWeek]);
 	}
 	drawRows(priceDiff,1,true);
 }
@@ -18,7 +18,7 @@ function sorty(mat,sortBy,dir){
 
 function drawRows(mat,sortBy,dir){
 	mat = sorty(mat,sortBy,dir);
-	let titles = ["Item name","Price Diff(%)","Price Diff","Purchases/week"];
+	let titles = ["Item name","Profit percent","Profit per","Purchases/week"];
 	let row;
 	let header = "<div class='row header'>";
 	for(let i = 0; i<titles.length;i++){
