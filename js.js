@@ -6,7 +6,7 @@ function prices(data){
 		p = data[p].quick_status;
 		priceDiff.push([p.productId,1-((p.sellPrice*1.01)/(p.buyPrice*0.99)),p.buyPrice*0.99-p.sellPrice*1.01,p.buyMovingWeek]);
 	}
-	drawRows(priceDiff,1,true);
+	drawRows(priceDiff,1,false);
 }
 
 function sorty(mat,sortBy,dir){
